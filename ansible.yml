@@ -16,7 +16,8 @@
      msg: "starting apache2"
     notify:
       - restart_apache2
-    handlers:
+    
+  handlers:
   - name: restart_apache2
     service:
      state: restarted
