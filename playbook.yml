@@ -1,4 +1,4 @@
---
+---
 - hosts: localhost
   become: yes
   tasks:
@@ -12,13 +12,11 @@
      name: apache2
      update_cache: yes
      state: present
-  - debug:
-     msg: "starting apache2"
     notify:
       - restart_apache2
-    
   handlers:
   - name: restart_apache2
     service:
      state: restarted
      name: apache2
+
